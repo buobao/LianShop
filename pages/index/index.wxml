@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="search">
+  <view class="search-bar">
+    <view class="search-wrap">
+      <icon type="search" size="16" class="icon-search" />
+      <input type="text" placeholder="请输入搜索内容" class="search-input" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+    </view>
+    <view class="search-cancel" bindtap="keywordSearch">搜索</view>
+  </view>
+
+  <view class="search-result">
+    <scroll-view scroll-y="true" scroll-bar="none" bindscrolltolower="searchScrollLower">
+      <view style="display: inline-block;flex-direction:row;width:100%">
+        <view style="display: inline-block;flex-direction: column;width:50%">
+          <view wx:for="{{sourceLeftList}}" wx:key="id">
+            <view class="result-item">
+              <image style='height:250rpx' src='{{item.DefaultImage}}'></image>
+              <view style='flex-direction: column;display: flex;'>
+                <text class="title">{{item.DisplayEstName}}</text>
+                <text class="subtitle">{{item.Address}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view style="display: inline-block;flex-direction: column;width:50%">
+          <view wx:for="{{sourceRightList}}" wx:key="id">
+            <view class="result-item">
+              <image style='height:250rpx' src='{{item.DefaultImage}}'></image>
+              <view style='flex-direction: column;display: flex;'>
+                <text class="title">{{item.DisplayEstName}}</text>
+                <text class="subtitle">{{item.Address}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
