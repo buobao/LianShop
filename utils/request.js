@@ -7,7 +7,7 @@ function getGoodsList(keyword, pageindex, callback) {
       ImageHeight:"400",
       ImageWidth:"600",
       IsHasPaNo:"false",
-      PageCount:"20",
+      PageCount:"12",
       PostType:"s",
       Keywords: keyword,
       PageIndex: pageindex,

@@ -9,7 +9,7 @@
   </view>
 
   <view class="search-result">
-    <scroll-view scroll-y="true" scroll-bar="none" bindscrolltolower="searchScrollLower">
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
       <view style="display: inline-block;flex-direction:row;width:100%">
         <view style="display: inline-block;flex-direction: column;width:50%">
           <view wx:for="{{sourceLeftList}}" wx:key="id">
