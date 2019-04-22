@@ -1,0 +1,92 @@
+<!--pages/index/publish.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset" class='container'>
+  <!-- <view class="section section_gap">
+    <view class="section__title">switch</view>
+    <switch name="switch" />
+  </view> -->
+  <!-- <view class="section section_gap">
+    <view class="section__title">slider</view>
+    <slider name="slider" show-value></slider>
+  </view> -->
+  <!-- <view class="section section_gap">
+    <view class="section__title">radio</view>
+    <radio-group name="radio-group">
+      <label>
+        <radio value="radio1" />
+        radio1
+      </label>
+      <label>
+        <radio value="radio2" />
+        radio2
+      </label>
+    </radio-group>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">checkbox</view>
+    <checkbox-group name="checkbox">
+      <label>
+        <checkbox value="checkbox1" />
+        checkbox1
+      </label>
+      <label>
+        <checkbox value="checkbox2" />
+        checkbox2
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="btn-area">
+    <button form-type="submit">Submit</button>
+    <button form-type="reset">Reset</button>
+  </view> -->
+
+  <scroll-view>
+    <view class="section">
+      <view class="title">产品标题
+        <text class='input_count'>{{inputCountTitle}}</text>
+      </view>
+      <textarea class='text' maxlength='120' bindinput='inputChange' style='height:120rpx;' id='title' name="title" placeholder="请输入标题内容"></textarea>
+
+    </view>
+    <view class="section">
+      <view class="title">详情介绍
+        <text class='input_count'>{{inputCountDetail}}</text>
+      </view>
+      <textarea class='text' maxlength='300' bindinput='inputChange' style='height:240rpx;' id='detail' name="detail" placeholder="请输入产品介绍信息"></textarea>
+    </view>
+
+    <view class="section">
+      <view class="title">规格描述
+        <text style='float:right;font-size:32rpx' bindtap='addGuige'>+</text>
+      </view>
+      <!-- <view wx:for="{{guigeCount}}" wx:key="id">
+        <input id='guige' placeholder="请输入规格信息" maxlength='6'></input>
+      <view> -->
+      <view wx:for="{{guigeCount}}" wx:key="id" style='display: inline-block;'>
+        <input id='guige{{index}}' class='guige' name='guige' placeholder="规格{{index}}" maxlength='8'></input>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="title">价格</view>
+      <input id='price' class='text' name='price' placeholder="以人民币元为单位" maxlength='8'></input>
+    </view>
+
+    <view class="section">
+      <view class="title">图片上传
+        <text class='input_count'>{{uploaderNum}}/9</text>
+      </view>
+      <view class='ui_uploader_cell'>
+        <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+          <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red" />
+          <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+        </view>
+        <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="section">
+    <button form-type="submit" style='color:#0f0'>提交</button>
+    <!-- <button form-type="reset" style='color:#f00'>重置</button> -->
+  </view>
+</form>

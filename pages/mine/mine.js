@@ -17,6 +17,11 @@ Page({
       hasUserInfo: true
     })
   },
+  openPublish: function (e) {
+    wx.navigateTo({    
+      url: "/pages/publish/publish"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

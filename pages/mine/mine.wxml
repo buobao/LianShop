@@ -29,7 +29,7 @@
       </view>
     </view>
     <view class='userblock' wx:if="{{openId=='oRuP60DYzPNtXgeozrgA-J45njWI'}}">
-      <view style='margin:30rpx;align-items: center;'>
+      <view style='margin:30rpx;align-items: center;' bindtap='openPublish'>
         <image src='../../images/publish.png' style='width:48rpx;height:48rpx;'></image> 
         <view style='font-size:18rpx;color:#333'>发布商品</view>
       </view>
